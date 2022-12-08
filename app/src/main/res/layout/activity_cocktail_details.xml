@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.CocktailDetails">
+
+    <ImageView
+        android:id="@+id/imgDetailCocktail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="58dp"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/txtDetailName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="24dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/imgDetailCocktail"
+        app:layout_constraintTop_toBottomOf="@+id/imgDetailCocktail" />
+
+    <TextView
+        android:id="@+id/txtDetailType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/txtIngredient1"
+        app:layout_constraintTop_toBottomOf="@+id/txtIngredient1" />
+
+    <TextView
+        android:id="@+id/txtIngredient1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/txtIngredient2"
+        app:layout_constraintTop_toBottomOf="@+id/txtIngredient2" />
+
+    <TextView
+        android:id="@+id/txtIngredient2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtIngredient3"
+        app:layout_constraintStart_toStartOf="@+id/txtDetailName" />
+
+    <TextView
+        android:id="@+id/txtIngredient3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/txtIngredient2"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetailName" />
+
+    <TextView
+        android:id="@+id/txtIngredient4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtIngredient2"
+        app:layout_constraintStart_toStartOf="@+id/txtIngredient2" />
+
+    <TextView
+        android:id="@+id/txtHowTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/txtDetailType"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetailType" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

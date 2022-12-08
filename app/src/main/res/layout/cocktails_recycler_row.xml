@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="242dp">
+
+        <ImageView
+            android:id="@+id/imgCocktailRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/txtNameRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="18dp"
+            android:text="Cocktail Name"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/imgCocktailRow"
+            app:layout_constraintTop_toTopOf="@+id/imgCocktailRow" />
+
+        <TextView
+            android:id="@+id/txtTypeRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Cocktail Type"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/txtNameRow"
+            app:layout_constraintTop_toBottomOf="@+id/txtNameRow" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

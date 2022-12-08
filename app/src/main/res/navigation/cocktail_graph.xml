@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cocktail_graph"
+    app:startDestination="@id/cocktailsList">
+
+    <activity
+        android:id="@+id/cocktailsList"
+        android:name="com.example.cocktails.view.CocktailsList"
+        android:label="CocktailsList" />
+    <activity
+        android:id="@+id/cocktailDetails"
+        android:name="com.example.cocktails.view.CocktailDetails"
+        android:label="CocktailDetails" />
+</navigation>
