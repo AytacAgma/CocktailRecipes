@@ -45,8 +45,8 @@ android {
 
 dependencies {
     def retrofitVersion = '2.9.0'
-    def rxAndroidVersion = '3.0.2'
-    def rxJavaVersion = '3.1.5'
+    def rxJavaVersion = '2.2.8'
+    def rxAndroidVersion = '2.1.1'
     def nav_version = "2.5.3"
     def glide_version = "4.14.2"
     def lifeCycleExtensionVersion = '1.1.1'
@@ -62,8 +62,8 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
-    implementation "io.reactivex.rxjava3:rxandroid:$rxAndroidVersion"
-    implementation "io.reactivex.rxjava3:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation "com.github.bumptech.glide:glide:$glide_version"

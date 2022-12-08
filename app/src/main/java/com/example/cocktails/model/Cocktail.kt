@@ -29,5 +29,5 @@ data class Cocktail(
     val measure4: String?,
     @SerializedName("strInstructions")
     val howTo: String?
-    ) {
+) {
 }
