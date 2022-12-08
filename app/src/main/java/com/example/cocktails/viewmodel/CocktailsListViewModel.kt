@@ -1,5 +1,6 @@
 package com.example.cocktails.viewmodel
 
+import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.cocktails.model.Cocktail
@@ -8,6 +9,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.observers.DisposableSingleObserver
 import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_cocktails_list.*
 
 class CocktailsListViewModel : ViewModel() {
 
@@ -18,19 +20,21 @@ class CocktailsListViewModel : ViewModel() {
     private val cocktailAPIService = CocktailAPIService()
     private val disposable = CompositeDisposable()
 
-    fun refreshData(){
+    fun refreshData() {
         getWithAPI()
 
     }
 
-    private fun getWithAPI(){
-        //progressbar true yapılacak
+    private fun getWithAPI() {
+        //progressbar true yapıldı +
+        loading.value = true
+        errorMessage.value = false
 
         disposable.add(
             cocktailAPIService.getData()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableSingleObserver<List<Cocktail>>(){
+                .subscribeWith(object : DisposableSingleObserver<List<Cocktail>>() {
                     override fun onSuccess(t: List<Cocktail>) {
                         cocktails.value = t
                         errorMessage.value = false
