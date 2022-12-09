@@ -10,9 +10,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class CocktailAPIService {
 
-    //https://github.com/AytacAgma/CocktailRecipes/blob/master/app/cocktails.json
+    //https://raw.githubusercontent.com/AytacAgma/CocktailRecipes/master/app/cocktails.json
 
-    private val BASE_URL = "https://github.com/"
+    private val BASE_URL = "https://raw.githubusercontent.com/"
 
     var gson = GsonBuilder()
         .setLenient()
