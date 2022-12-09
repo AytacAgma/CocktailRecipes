@@ -4,10 +4,10 @@ import com.example.cocktails.model.Cocktail
 import io.reactivex.Single
 import retrofit2.http.GET
 
-//https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a
+//https://github.com/AytacAgma/CocktailRecipes/blob/master/app/cocktails.json
 
 interface CocktailAPI {
 
-    @GET("api/json/v1/1/search.php?f=a")
+    @GET("AytacAgma/CocktailRecipes/blob/master/app/cocktails.json")
     fun getCocktails() : Single<List<Cocktail>>
 }

@@ -8,9 +8,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class CocktailAPIService {
 
-    //https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a
+    //https://github.com/AytacAgma/CocktailRecipes/blob/master/app/cocktails.json
 
-    private val BASE_URL = "https://www.thecocktaildb.com/"
+    private val BASE_URL = "https://github.com/"
     private val api = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
