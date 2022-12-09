@@ -14,13 +14,14 @@ class CocktailAPIService {
 
     private val BASE_URL = "https://raw.githubusercontent.com/"
 
-    var gson = GsonBuilder()
+    /*var gson = GsonBuilder()
         .setLenient()
-        .create()
+        .create()*/
 
     private val api = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create(gson))
+        .addConverterFactory(GsonConverterFactory.create())
+        //.addConverterFactory(GsonConverterFactory.create(gson))
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
         .create(CocktailAPI::class.java)
