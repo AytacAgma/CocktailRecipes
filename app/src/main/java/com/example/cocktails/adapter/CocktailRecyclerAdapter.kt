@@ -25,6 +25,9 @@ class CocktailRecyclerAdapter(val cocktailList : ArrayList<Cocktail>) : Recycler
         holder.itemView.txtNameRow.text = cocktailList.get(position).name
         holder.itemView.txtTypeRow.text = cocktailList.get(position).type
 
+        // TO DO: Action'dan action'a geçiş (detaile gitmek) için buraya kod eklenecek
+        // holder.itemView.setOnClickListener{}
+
         holder.itemView.imgCocktailRow.download(cocktailList.get(position).image, makePlaceholder(holder.itemView.context))
     }
 
