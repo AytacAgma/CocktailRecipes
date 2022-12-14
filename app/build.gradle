@@ -44,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     def retrofitVersion = '2.9.0'
     def rxJavaVersion = '2.2.8'
     def rxAndroidVersion = '2.1.1'
