@@ -9,7 +9,7 @@ class CocktailDetailsViewModel : ViewModel() {
     val cocktailLiveData = MutableLiveData<Cocktail>()
 
     fun getDataFromRoom(){
-        val deneme = Cocktail("1","1","1","1","1","1","1","1","1","1","1","1","1")
-        cocktailLiveData.value = deneme
+        val cocktail = Cocktail("1","1","1","https://www.aytacagma.com/images/CVfototwit.PNG","1","1","1","1","1","1","1","1","1")
+        cocktailLiveData.value = cocktail
     }
 }

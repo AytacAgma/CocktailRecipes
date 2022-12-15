@@ -1,14 +1,18 @@
 package com.example.cocktails.adapter
 
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
+import androidx.core.content.ContextCompat.startActivity
+//import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cocktails.R
 import com.example.cocktails.model.Cocktail
 import com.example.cocktails.util.show
 import com.example.cocktails.util.makePlaceholder
+import com.example.cocktails.view.CocktailDetails
 import kotlinx.android.synthetic.main.cocktails_recycler_row.view.*
 
 class CocktailRecyclerAdapter(val cocktailList : ArrayList<Cocktail>) : RecyclerView.Adapter<CocktailRecyclerAdapter.CocktailViewHolder>() {
@@ -28,7 +32,9 @@ class CocktailRecyclerAdapter(val cocktailList : ArrayList<Cocktail>) : Recycler
 
         // TO DO: Action'dan action'a geçiş (detaile gitmek) için buraya kod eklenecek
         holder.itemView.setOnClickListener{
-            Navigation.findNavController(it).navigate(R.id.cocktailDetails)
+            //Navigation.findNavController(it).navigate(R.id.cocktailDetails)
+            val intent = Intent(it.context,CocktailDetails::class.java)
+            startActivity(it.context,intent, Bundle.EMPTY)
         }
 
         holder.itemView.imgCocktailRow.show(cocktailList.get(position).image, makePlaceholder(holder.itemView.context))
