@@ -3,6 +3,7 @@ package com.example.cocktails.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cocktails.R
 import com.example.cocktails.model.Cocktail
@@ -26,7 +27,9 @@ class CocktailRecyclerAdapter(val cocktailList : ArrayList<Cocktail>) : Recycler
         holder.itemView.txtTypeRow.text = cocktailList.get(position).type
 
         // TO DO: Action'dan action'a geçiş (detaile gitmek) için buraya kod eklenecek
-        // holder.itemView.setOnClickListener{}
+        holder.itemView.setOnClickListener{
+            Navigation.findNavController(it).navigate(R.id.cocktailDetails)
+        }
 
         holder.itemView.imgCocktailRow.show(cocktailList.get(position).image, makePlaceholder(holder.itemView.context))
     }
