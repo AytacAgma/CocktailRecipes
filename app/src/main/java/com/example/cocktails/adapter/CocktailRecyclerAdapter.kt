@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cocktails.R
 import com.example.cocktails.model.Cocktail
-import com.example.cocktails.util.download
+import com.example.cocktails.util.show
 import com.example.cocktails.util.makePlaceholder
 import kotlinx.android.synthetic.main.cocktails_recycler_row.view.*
 
@@ -28,7 +28,7 @@ class CocktailRecyclerAdapter(val cocktailList : ArrayList<Cocktail>) : Recycler
         // TO DO: Action'dan action'a geçiş (detaile gitmek) için buraya kod eklenecek
         // holder.itemView.setOnClickListener{}
 
-        holder.itemView.imgCocktailRow.download(cocktailList.get(position).image, makePlaceholder(holder.itemView.context))
+        holder.itemView.imgCocktailRow.show(cocktailList.get(position).image, makePlaceholder(holder.itemView.context))
     }
 
     override fun getItemCount(): Int {

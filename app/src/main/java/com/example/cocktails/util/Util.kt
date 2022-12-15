@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.cocktails.R
 
-fun ImageView.download(url: String?, placeholder : CircularProgressDrawable){
+fun ImageView.show(url: String?, placeholder : CircularProgressDrawable){
 
     val options = RequestOptions().placeholder(placeholder).error(R.mipmap.ic_launcher_round)
 
