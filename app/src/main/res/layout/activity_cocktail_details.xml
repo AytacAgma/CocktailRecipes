@@ -11,9 +11,9 @@
 
         <ImageView
             android:id="@+id/imgDetailCocktail"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="56dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
             app:flow_horizontalAlign="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="33dp"
             android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,10 +37,26 @@
             android:id="@+id/txtDetailType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="7dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/txtDetailName"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtDetailName" />
+
+        <TextView
+            android:id="@+id/txtIngredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Ingredients:"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailType" />
 
         <TextView
             android:id="@+id/txtIngredient1"
@@ -46,25 +64,31 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="34dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/txtDetailType"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtDetailType" />
 
         <TextView
             android:id="@+id/txtIngredient2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="7dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/txtIngredient1"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtIngredient1" />
 
         <TextView
             android:id="@+id/txtIngredient3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="7dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/txtIngredient2"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtIngredient2" />
 
         <TextView
@@ -73,16 +97,33 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/txtIngredient3"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtIngredient3" />
 
         <TextView
-            android:id="@+id/txtHowTo"
+            android:id="@+id/txtRecipe"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Recipe:"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtIngredient4" />
+
+        <TextView
+            android:id="@+id/txtHowTo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/txtIngredient4"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtIngredient4" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

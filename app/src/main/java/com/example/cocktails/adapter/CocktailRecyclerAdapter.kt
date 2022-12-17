@@ -31,13 +31,24 @@ class CocktailRecyclerAdapter(val cocktailList : ArrayList<Cocktail>) : Recycler
         holder.itemView.txtTypeRow.text = cocktailList.get(position).type
         holder.itemView.imgCocktailRow.show(cocktailList.get(position).image, makePlaceholder(holder.itemView.context))
 
-        // TO DO: Action'dan action'a geçiş (detaile gitmek) için buraya kod eklenecek
+        // Action'dan action'a geçiş (detaile gitmek) için buraya kod eklendi
         holder.itemView.setOnClickListener{
             //Navigation.findNavController(it).navigate(R.id.cocktailDetails)
             val intent = Intent(it.context,CocktailDetails::class.java)
+                .putExtra("id",cocktailList.get(position).id)
                 .putExtra("name",cocktailList.get(position).name)
+                .putExtra("type",cocktailList.get(position).type)
                 .putExtra("image",cocktailList.get(position).image)
-            startActivity(it.context, intent, Bundle.EMPTY)
+                .putExtra("ingredient1",cocktailList.get(position).ingredient1)
+                .putExtra("ingredient2",cocktailList.get(position).ingredient2)
+                .putExtra("ingredient3",cocktailList.get(position).ingredient3)
+                .putExtra("ingredient4",cocktailList.get(position).ingredient4)
+                .putExtra("measure1",cocktailList.get(position).measure1)
+                .putExtra("measure2",cocktailList.get(position).measure2)
+                .putExtra("measure3",cocktailList.get(position).measure3)
+                .putExtra("measure4",cocktailList.get(position).measure4)
+                .putExtra("howTo",cocktailList.get(position).howTo)
+            startActivity(it.context, intent, Bundle.EMPTY) //TO DO: startActivity putExtra yerine Bundle ile toplu göndermeye bakılacak
         }
     }
 
