@@ -11,9 +11,8 @@
 
         <ImageView
             android:id="@+id/imgDetailCocktail"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
             app:flow_horizontalAlign="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,10 +23,10 @@
             android:id="@+id/txtDetailName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="33dp"
+            android:layout_marginTop="10dp"
             android:text="TextView"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +36,6 @@
             android:id="@+id/txtDetailType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
             android:text="TextView"
             android:textAlignment="center"
             android:textStyle="italic"
@@ -116,7 +114,7 @@
 
         <TextView
             android:id="@+id/txtHowTo"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="TextView"
