@@ -13,9 +13,9 @@
             android:id="@+id/imgDetailCocktail"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="140dp"
             android:layout_marginTop="56dp"
             app:flow_horizontalAlign="center"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_launcher_background" />
@@ -25,10 +25,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="33dp"
-            android:layout_marginEnd="23dp"
             android:text="TextView"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/imgDetailCocktail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgDetailCocktail" />
 
         <TextView

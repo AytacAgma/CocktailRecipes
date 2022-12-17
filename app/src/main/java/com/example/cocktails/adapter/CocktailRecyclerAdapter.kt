@@ -29,15 +29,16 @@ class CocktailRecyclerAdapter(val cocktailList : ArrayList<Cocktail>) : Recycler
     override fun onBindViewHolder(holder: CocktailViewHolder, position: Int) {
         holder.itemView.txtNameRow.text = cocktailList.get(position).name
         holder.itemView.txtTypeRow.text = cocktailList.get(position).type
+        holder.itemView.imgCocktailRow.show(cocktailList.get(position).image, makePlaceholder(holder.itemView.context))
 
         // TO DO: Action'dan action'a geçiş (detaile gitmek) için buraya kod eklenecek
         holder.itemView.setOnClickListener{
             //Navigation.findNavController(it).navigate(R.id.cocktailDetails)
             val intent = Intent(it.context,CocktailDetails::class.java)
-            startActivity(it.context,intent, Bundle.EMPTY)
+                .putExtra("name",cocktailList.get(position).name)
+                .putExtra("image",cocktailList.get(position).image)
+            startActivity(it.context, intent, Bundle.EMPTY)
         }
-
-        holder.itemView.imgCocktailRow.show(cocktailList.get(position).image, makePlaceholder(holder.itemView.context))
     }
 
     override fun getItemCount(): Int {

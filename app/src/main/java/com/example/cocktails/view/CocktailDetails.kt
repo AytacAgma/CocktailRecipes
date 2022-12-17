@@ -1,11 +1,9 @@
 package com.example.cocktails.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.get
 import com.example.cocktails.R
 import com.example.cocktails.util.makePlaceholder
 import com.example.cocktails.util.show
@@ -22,22 +20,27 @@ class CocktailDetails : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(CocktailDetailsViewModel::class.java)
         viewModel.getDataFromRoom()
 
-        observeLiveData()
+        val b = intent.extras
+        val name = b!!.getString("name")
+        println(name)
+        val image = b!!.getString("image")
+
+        observeLiveData(name, image)
     }
 
-    fun observeLiveData(){
+    fun observeLiveData(name : String?, image : String?){
 
         viewModel.cocktailLiveData.observe(this, Observer {cocktail->
 
             cocktail?.let {
-                txtDetailName.text = it.name
+                txtDetailName.text = name
                 txtDetailType.text = it.type
                 txtIngredient1.text = it.ingredient1
                 txtIngredient2.text = it.ingredient2
                 txtIngredient3.text = it.ingredient3
                 txtIngredient4.text = it.ingredient4
                 txtHowTo.text = it.howTo
-                imgDetailCocktail.show(it.image, makePlaceholder(this))
+                imgDetailCocktail.show(image, makePlaceholder(this))
             }
         })
     }
