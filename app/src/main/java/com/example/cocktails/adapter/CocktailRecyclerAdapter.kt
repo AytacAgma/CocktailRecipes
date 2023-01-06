@@ -20,6 +20,12 @@ class CocktailRecyclerAdapter(val cocktailList : ArrayList<Cocktail>) : Recycler
 
     }
 
+    var cocktailFilterList = ArrayList<Cocktail>()
+
+    init {
+        cocktailFilterList = cocktailList
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CocktailViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.cocktails_recycler_row,parent,false)
@@ -53,7 +59,7 @@ class CocktailRecyclerAdapter(val cocktailList : ArrayList<Cocktail>) : Recycler
     }
 
     override fun getItemCount(): Int {
-        return cocktailList.size
+        return cocktailFilterList.size
     }
 
     fun updateCocktailList(newCocktailList: List<Cocktail>){
