@@ -3,6 +3,7 @@ package com.example.cocktails.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,12 +14,24 @@ import kotlinx.android.synthetic.main.activity_cocktails_list.*
 
 class CocktailsList : AppCompatActivity() {
 
-    private  lateinit var viewModel : CocktailsListViewModel
+    private lateinit var viewModel: CocktailsListViewModel
     private val recyclerCocktailAdapter = CocktailRecyclerAdapter(arrayListOf())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cocktails_list)
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                recyclerCocktailAdapter.filter.filter(newText)
+                return false
+            }
+
+        })
 
         viewModel = ViewModelProvider(this).get(CocktailsListViewModel::class.java)
         viewModel.refreshData()
@@ -30,7 +43,7 @@ class CocktailsList : AppCompatActivity() {
 
     }
 
-    fun observeLiveData(){
+    fun observeLiveData() {
         viewModel.cocktails.observe(this, Observer {
             it?.let {
 
@@ -44,8 +57,7 @@ class CocktailsList : AppCompatActivity() {
                 if (it) {
                     cocktailListErrorMsg.visibility = View.VISIBLE
                     cocktailListRecyclerView.visibility = View.GONE
-                }
-                else{
+                } else {
                     cocktailListErrorMsg.visibility = View.GONE
                 }
             }
@@ -53,12 +65,11 @@ class CocktailsList : AppCompatActivity() {
 
         viewModel.loading.observe(this, Observer {
             it?.let {
-                if(it){
+                if (it) {
                     cocktailListRecyclerView.visibility = View.GONE
                     cocktailListErrorMsg.visibility = View.GONE
                     cocktailListLoading.visibility = View.VISIBLE
-                }
-                else{
+                } else {
                     cocktailListLoading.visibility = View.GONE
                 }
 
